@@ -2,15 +2,13 @@
 """
 Created on Sat Apr  3 18:10:34 2021
 
-@author: milol
+@author: vistagoal
 """
 
 import streamlit as st
 import pandas as pd
 import base64
 import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
 
 st.title('Stock Explorer Russel 2000')
 
@@ -20,7 +18,7 @@ st.markdown("""
 """)
 
 
-df=pd.read_csv("nasdaqfiveball.csv",index_col=0)
+df=pd.read_csv("russel_2000.csv",index_col=0)
 
 sorted_unique_sector = sorted(df.sector.unique())
 
@@ -46,7 +44,7 @@ st.dataframe(df_data_display)
 def filedownload(df_data_display):
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # strings <-> bytes conversions
-    href = f'<a href="data:file/csv;base64,{b64}" download="playerstats.csv">Download CSV File</a>'
+    href = f'<a href="data:file/csv;base64,{b64}" download="analysis_results.csv">Download CSV File</a>'
     return href
 
 st.markdown(filedownload(df_data_display), unsafe_allow_html=True)
