@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 st.title('Stock Explorer Russel 2000')
 
 st.markdown("""
-* **
+* ** Pet Project 
 * **Python libraries:**  pandas, streamlit
 * **Data source:** [Yahoo Fin for Russel 2000](https://finance.yahoo.com/).
 """)
